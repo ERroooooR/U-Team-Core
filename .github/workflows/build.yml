@@ -25,3 +25,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew assemble --no-daemon -Dorg.gradle.jvmargs=-Xmx6G
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: build/libs/
